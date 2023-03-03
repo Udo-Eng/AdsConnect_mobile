@@ -1,4 +1,12 @@
-import { View, Text, Image, Pressable,StyleSheet } from "react-native";
+import {
+  View,
+  Text,
+  Image,
+  Pressable,
+  StyleSheet,
+  KeyboardAvoidingView,
+  Platform,
+} from "react-native";
 import React, { useState } from "react";
 import PrimaryButton from "../UI/PrimaryButton";
 import Input from "../UI/Input";
@@ -20,53 +28,50 @@ const SignUpForm = () => {
   }
 
   return (
-    <View>
-      
-      <Input
-        label="Email Address"
-        textInputConfig={{
-          autoCapitalize: "none",
-          autoCorrect: false,
-          autoFocus: true,
-          cursorColor: "#00000",
-        }}
-      />
-      <PasswordInput
-        label="Password"
-        textInputConfig={{
-          onChangeText: () => {},
-        }}
-      />
-      <View>
-        <Checkbox
-          status={checked ? "checked" : "unchecked"}
-          onPress={() => {
-            setChecked(!checked);
+    <KeyboardAvoidingView
+      behavior={Platform.OS === "ios" ? "padding" : "height"}
+    >
+      <View keyboardDismissMode="on-drag">
+        <Input
+          label="Email Address"
+          textInputConfig={{
+            autoCapitalize: "none",
+            autoCorrect: false,
+            autoFocus: true,
+            cursorColor: "#00000",
           }}
         />
-        <Text>
-          I Agree To The <Text>Privacy Statement</Text>
-        </Text>
+        <Input
+          label="Password"
+          textInputConfig={{
+            onChangeText: () => {},
+          }}
+        />
+        <View>
+          <Checkbox
+            status={checked ? "checked" : "unchecked"}
+            onPress={() => {
+              setChecked(!checked);
+            }}
+          />
+          <Text>
+            I Agree To The <Text>Privacy Statement</Text>
+          </Text>
+        </View>
+
+        <PrimaryButton>Create Account</PrimaryButton>
+
+        <PrimaryButton>
+          {/* <Image source={require("../assets/image/logos_google-icon.png")} /> */}
+          Sign Up With Google
+        </PrimaryButton>
       </View>
-
-      <PrimaryButton>Create Account</PrimaryButton>
-
-
-
-      <PrimaryButton>
-        <Image source={require("../../assets/image/logos_google-icon.png")} />
-        Sign Up With Google
-      </PrimaryButton>
-      
-    </View>
+    </KeyboardAvoidingView>
   );
 };
 
 export default SignUpForm;
 
-
 const styles = StyleSheet.create({
-    container: {
-
-    }
-})
+  container: {},
+});

@@ -1,5 +1,5 @@
 import { View, Text, Pressable, StyleSheet } from "react-native";
-import { COLORS, SIZES } from "../../constants";
+import { COLORS, SIZES } from "../../constants/colors";
 
 const PrimaryButton = ({ children, onPress, textStyle, btnStyle,btnContainer }) => {
   const defaultTextStyle = [styles.buttonText, textStyle];
