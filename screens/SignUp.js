@@ -1,4 +1,4 @@
-import { View, StyleSheet, Text, Image,Pressable } from "react-native";
+import { View, StyleSheet, Text, Image, Pressable } from "react-native";
 import React from "react";
 import SignUpForm from "../components/SignUp/SignUpForm";
 
