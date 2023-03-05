@@ -1,4 +1,4 @@
-import { View, StyleSheet, Text, Image,Pressable} from "react-native";
+import { View, StyleSheet, Text, Image, Pressable } from "react-native";
 import React from "react";
 import SignUpForm from "../components/SignUp/SignUpForm";
 
@@ -10,6 +10,10 @@ const SignUp = () => {
       <Text style={styles.subtitle}>All You Need Is A Digital Push</Text>
       {/* <Image source={require("../assets/images/amico.png")} /> */}
       <Text style={styles.formHeader}>Sign Up</Text>
+      <Text>DRUID</Text>
+      <Text>All You Need Is A Digital Push</Text>
+      <Image source={require("../assets/images/amico.png")} />
+      <Text>Sign Up</Text>
 
       <SignUpForm />
 

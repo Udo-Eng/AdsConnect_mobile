@@ -1,4 +1,12 @@
-import { View, Text, Image, StyleSheet,Pressable } from "react-native";
+import {
+  View,
+  Text,
+  Image,
+  Pressable,
+  StyleSheet,
+  KeyboardAvoidingView,
+  Platform,
+} from "react-native";
 import React, { useState } from "react";
 import PrimaryButton from "../UI/PrimaryButton";
 import PasswordInput from "../UI/PasswordInput";
@@ -21,7 +29,11 @@ const SignUpForm = () => {
   }
 
   return (
-    <View>
+    <>
+       <KeyboardAvoidingView
+          behavior={Platform.OS === "ios" ? "padding" : "height"}
+        >
+          <View keyboardDismissMode="on-drag">
       <Input
         label="Email Address"
         textInputConfig={{
@@ -54,6 +66,8 @@ const SignUpForm = () => {
         Sign Up With Google
       </PrimaryButton>
     </View>
+    </KeyboardAvoidingView>
+    </>
   );
 };
 
