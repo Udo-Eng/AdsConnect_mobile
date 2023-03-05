@@ -1,6 +1,7 @@
 import React from "react";
 import { View, Text, ScrollView, StyleSheet } from "react-native";
 import PrimaryButton from "../components/UI/PrimaryButton";
+import { termsOfUse } from "../data/termsOfUse";
 
 // const Seperator = () => <View style={styles.seperator} />
 
@@ -10,49 +11,22 @@ const TermOfUse = () => {
       <View style={styles.titleContainer}>
         <Text style={styles.pageTitle}>Terms of Use</Text>
         <Text style={styles.lastUpdate}>Last update on 2/6/2023</Text>
-      <View style={styles.seperator}/>
+        <View style={styles.seperator} />
       </View>
-      <ScrollView style={styles.scrollContainer} indicatorStyle="blue">
-        <View style={styles.textContainer}>
-          <Text style={styles.textTitle}>1. Clause 1</Text>
-          <Text style={styles.textBody}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Viverra
-            condimentum eget purus in. Consectetur eget id morbi amet amet, in.
-            Ipsum viverra pretium tellus neque. Ullamcorper suspendisse aenean
-            leo pharetra in sit semper et. Amet quam placerat sem.
-          </Text>
-        </View>
-
-        <View style={styles.textContainer}>
-          <Text style={styles.textTitle}>2. Clause 2</Text>
-          <Text style={styles.textBody}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Viverra
-            condimentum eget purus in. Consectetur eget id morbi amet amet, in.
-            Ipsum viverra pretium tellus neque. Ullamcorper suspendisse aenean
-            leo pharetra in sit semper et. Amet quam placerat sem. Lorem ipsum
-            dolor sit amet, consectetur adipiscing elit. Viverra condimentum
-            eget purus in. Consectetur eget id morbi amet amet, in. Ipsum
-            viverra pretium tellus neque. Ullamcorper suspendisse aenean leo
-            pharetra in sit semper et. Amet quam placerat sem.
-          </Text>
-        </View>
-
-        <View style={styles.textContainer}>
-          <Text style={styles.textTitle}>3. Clause 3</Text>
-          <Text style={styles.textBody}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Viverra
-            condimentum eget purus in. Consectetur eget id morbi amet amet, in.
-            Ipsum viverra pretium tellus neque. Ullamcorper suspendisse aenean
-            leo pharetra in sit semper et. Amet quam placerat sem. Lorem ipsum
-            dolor sit amet, consectetur adipiscing elit. Viverra condimentum
-            eget purus in. Consectetur eget id morbi amet amet, in. Ipsum
-            viverra pretium tellus neque. Ullamcorper suspendisse aenean leo
-            pharetra in sit semper et. Amet quam placerat sem.
-          </Text>
-        </View>
+      <ScrollView style={styles.scrollContainer} indicatorStyle={"redh"}>
+        {termsOfUse.map(({ id, text }) => {
+          return (
+            <View style={styles.textContainer}>
+              <Text style={styles.textTitle}>
+                {id}. Clause {id}
+              </Text>
+              <Text style={styles.textBody}>{text}</Text>
+            </View>
+          );
+        })}
 
         <PrimaryButton style={styles.buttonContainer}>
-          <Text style={{color: '#fff'}}>Agree And Continue</Text>
+          <Text style={{ color: "#fff" }}>Agree And Continue</Text>
         </PrimaryButton>
       </ScrollView>
     </View>
@@ -68,7 +42,7 @@ const styles = StyleSheet.create({
   titleContainer: {
     paddingLeft: 26.5,
     marginTop: 28,
-    marginBottom: 28
+    marginBottom: 28,
   },
   pageTitle: {
     color: "#074698",
@@ -98,11 +72,11 @@ const styles = StyleSheet.create({
     color: "#545950",
   },
   buttonContainer: {
-      marginBottom: 40
+    marginBottom: 40,
   },
   seperator: {
-      borderBottomWidth: 1,
-      borderColor: '#d9d9d9',
-      marginTop: 32
-  }
+    borderBottomWidth: 1,
+    borderColor: "#d9d9d9",
+    marginTop: 32,
+  },
 });
