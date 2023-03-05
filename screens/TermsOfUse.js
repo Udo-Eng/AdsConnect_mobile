@@ -5,7 +5,7 @@ import { termsOfUse } from "../data/termsOfUse";
 
 // const Seperator = () => <View style={styles.seperator} />
 
-const TermOfUse = () => {
+const TermOfUse = ({navigation}) => {
   return (
     <View style={styles.container}>
       <View style={styles.titleContainer}>
@@ -16,7 +16,7 @@ const TermOfUse = () => {
       <ScrollView style={styles.scrollContainer} indicatorStyle={"redh"}>
         {termsOfUse.map(({ id, text }) => {
           return (
-            <View style={styles.textContainer}>
+            <View style={styles.textContainer} keyExtractor={() => id}>
               <Text style={styles.textTitle}>
                 {id}. Clause {id}
               </Text>
@@ -25,7 +25,7 @@ const TermOfUse = () => {
           );
         })}
 
-        <PrimaryButton style={styles.buttonContainer}>
+        <PrimaryButton style={styles.buttonContainer} onPress={() => navigation.navigate('Account Setup')}>
           <Text style={{ color: "#fff" }}>Agree And Continue</Text>
         </PrimaryButton>
       </ScrollView>
