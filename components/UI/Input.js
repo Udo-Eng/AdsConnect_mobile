@@ -45,16 +45,16 @@ const styles = StyleSheet.create({
     marginTop: 26,
   },
   inputContainer: {
-    borderColor: "gray",
+    borderColor: "#BDBDBD",
     marginTop: 6,
     borderWidth: 1,
-    borderRadius: 10,
+    borderRadius: 4,
     padding: 10,
     flexDirection: "row",
   },
   inputLabel: {
     opacity: 0.7,
-    color: "#828282",
+    color: "#545950",
   },
   input: {
     flex: 1,

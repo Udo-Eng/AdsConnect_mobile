@@ -14,3 +14,8 @@ export const SIZES = {
     width : width,
     height: height,
 }
+
+
+const theme = {COLORS,SIZES};
+
+export default  theme;
