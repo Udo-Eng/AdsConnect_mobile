@@ -11,9 +11,10 @@ import {
   ScrollView,
 } from "react-native";
 import PrimaryButton from "../../components/UI/PrimaryButton";
+// import { Dropdown } from "react-native-element-dropdown";
 
 const AccountSetup2 = ({ navigation }) => {
-  const [state, setState] = useState("");
+  const [state, setState] = useState("Yes");
   const [lastName, setLastName] = useState("");
   const [schoolID, setSchoolID] = useState("");
   return (
@@ -56,7 +57,7 @@ const AccountSetup2 = ({ navigation }) => {
           </View>
           <PrimaryButton
             style={styles.saveButton}
-            onPress={() => navigation.navigate("Terms of Use")}
+            onPress={() => navigation.navigate("Final Setup")}
           >
             <Text style={{ color: "#fff" }}>Save And Continue</Text>
           </PrimaryButton>
@@ -73,7 +74,7 @@ export default AccountSetup2;
 
 const styles = StyleSheet.create({
   container: {
-    paddingTop: 20
+    paddingTop: 20,
   },
   pageHeader: {
     alignItems: "center",

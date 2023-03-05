@@ -7,6 +7,7 @@ import TermOfUse from "./screens/TermsOfUse";
 import SignUp from "./screens/SignUp";
 import AccountSetup from "./screens/AccountSetup/AccountSetup";
 import AccountSetup2 from "./screens/AccountSetup/AccountSetup2";
+import FinalSetup from "./screens/AccountSetup/FinalSetup";
 
 export default function App() {
   const Stack = createNativeStackNavigator();
@@ -19,6 +20,7 @@ export default function App() {
             {/* <Stack.Screen name='Sign Up' component={SignUp} /> */}
             <Stack.Screen name='Account Setup' component={AccountSetup} />
             <Stack.Screen name='Complete Setup' component={AccountSetup2} />
+            <Stack.Screen name='Final Setup' component={FinalSetup} />
           </Stack.Navigator>
         {/* </View> */}
 

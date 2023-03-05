@@ -16,7 +16,7 @@ const TermOfUse = ({navigation}) => {
       <ScrollView style={styles.scrollContainer} indicatorStyle={"redh"}>
         {termsOfUse.map(({ id, text }) => {
           return (
-            <View style={styles.textContainer} keyExtractor={() => id}>
+            <View style={styles.textContainer} key={id}>
               <Text style={styles.textTitle}>
                 {id}. Clause {id}
               </Text>
