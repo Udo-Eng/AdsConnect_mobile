@@ -28,7 +28,6 @@ const AccountSetup = ({ navigation }) => {
         </View>
         <View style={styles.formContainer}>
           <Text style={styles.formHeading}>Complete Account Set Up</Text>
-
           <View>
             <Text style={styles.formLabel}>First Name</Text>
             <TextInput
@@ -56,7 +55,11 @@ const AccountSetup = ({ navigation }) => {
           </View>
           <PrimaryButton
             style={styles.saveButton}
-            onPress={() => navigation.navigate("Complete Setup")}
+            onPress={() => navigation.navigate("Complete Setup",{
+              firstName,
+              lastName,
+              
+            })}
           >
             <Text style={{ color: "#fff" }}>Save And Continue</Text>
           </PrimaryButton>

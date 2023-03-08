@@ -58,7 +58,7 @@ let inputConfig =   {
     autoCapitalize: "none",
     autoCorrect: false,
     secureTextEntry: true,
-    cursorColor: "#00000",
+    cursorColor: COLORS.cursorColor,
     ...textInputConfig
   }
 
@@ -79,7 +79,7 @@ const styles = StyleSheet.create({
     marginTop: 12,
   },
   inputContainer: {
-    borderColor: "#BDBDBD",
+    borderColor: COLORS.inputBorder,
     marginTop: 6,
     borderWidth: 1,
     borderRadius: 4,
@@ -88,7 +88,7 @@ const styles = StyleSheet.create({
   },
   inputLabel: {
     opacity: 0.7,
-    color: "#545950",
+    color: COLORS.inputLabel,
   },
   input: {
     flex: 1,

@@ -1,4 +1,5 @@
 import { TextInput, View, Text, StyleSheet } from "react-native";
+import { COLORS } from "../../constants";
 
 
 const Input = ({
@@ -45,7 +46,7 @@ const styles = StyleSheet.create({
     marginTop: 26,
   },
   inputContainer: {
-    borderColor: "#BDBDBD",
+    borderColor: COLORS.inputBorder,
     marginTop: 6,
     borderWidth: 1,
     borderRadius: 4,
@@ -54,7 +55,7 @@ const styles = StyleSheet.create({
   },
   inputLabel: {
     opacity: 0.7,
-    color: "#545950",
+    color: COLORS.inputLabel,
   },
   input: {
     flex: 1,

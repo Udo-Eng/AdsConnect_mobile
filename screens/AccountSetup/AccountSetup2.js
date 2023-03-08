@@ -12,11 +12,17 @@ import {
 } from "react-native";
 import PrimaryButton from "../../components/UI/PrimaryButton";
 // import { Dropdown } from "react-native-element-dropdown";
+import { useIsFocused } from "@react-navigation/native";
 
 const AccountSetup2 = ({ navigation }) => {
   const [state, setState] = useState("Yes");
   const [school, setSchool] = useState("");
   const [schoolID, setSchoolID] = useState("");
+
+
+  const isFocused = useIsFocused();
+
+  
   return (
     <KeyboardAvoidingView
       behavior={Platform.OS === "ios" ? "padding" : "height"}

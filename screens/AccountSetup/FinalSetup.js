@@ -67,11 +67,11 @@ const FinalSetup = ({ navigation }) => {
                       return (
                           <View key={key}>
                               {checked === key ?
-                                <TouchableOpacity style={styles.btn} source={require("../../assets/images/adaptive-icon.png")}>
+                                <TouchableOpacity style={styles.btn} source={require("../../assets/adaptive-icon.png")}>
                                     <Image style={styles.img} />
                                     <Text>{data}</Text>
                                 </TouchableOpacity>  :
-                                <TouchableOpacity onPress={() => setChecked({key})} style={styles.btn} source={require("../../assets/images/adaptive-icon.png")}>
+                                <TouchableOpacity onPress={() => setChecked({key})} style={styles.btn} source={require("../../assets/adaptive-icon.png")}>
                                     <Image style={styles.img} />
                                     <Text>{data}</Text>
                                 </TouchableOpacity>
