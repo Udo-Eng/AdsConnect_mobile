@@ -10,3 +10,11 @@ export const passwordIsValid = (password) => {
         return password.trim().length > 6;
     }
 }
+
+
+export const isNotEmpty = (value) => {
+    if(typeof value === "string"){
+        return value.trim().length == 1;
+    }
+    return false;
+}

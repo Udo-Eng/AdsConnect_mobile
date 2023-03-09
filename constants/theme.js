@@ -12,6 +12,7 @@ export const COLORS = {
     inputLabel: "#545950",
     inputBorder:"#BDBDBD",
     inputErrorColor:"#a31717",
+    errorColor:"#EC5454",
 }
 
 export const SIZES = {
