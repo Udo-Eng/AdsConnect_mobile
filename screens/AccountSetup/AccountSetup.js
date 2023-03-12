@@ -11,6 +11,7 @@ import {
   ScrollView,
 } from "react-native";
 import PrimaryButton from "../../components/UI/PrimaryButton";
+import { COLORS } from "../../constants";
 
 const AccountSetup = ({ navigation }) => {
   const [firstName, setFirstName] = useState("");
@@ -22,13 +23,15 @@ const AccountSetup = ({ navigation }) => {
       style={{ flex: 1 }}
     >
       <ScrollView style={styles.container}>
+        <View style={styles.statusBarContainer}>
+          <View style={styles.statusBar}></View>
+        </View>
         <View style={styles.pageHeader}>
           <Text style={styles.title}>Get to know your audience with us</Text>
           <Image source={require("../../assets/images/amico.png")} />
         </View>
         <View style={styles.formContainer}>
           <Text style={styles.formHeading}>Complete Account Set Up</Text>
-
           <View>
             <Text style={styles.formLabel}>First Name</Text>
             <TextInput
@@ -55,8 +58,13 @@ const AccountSetup = ({ navigation }) => {
             />
           </View>
           <PrimaryButton
-            style={styles.saveButton}
-            onPress={() => navigation.navigate("Complete Setup")}
+            btnStyle={styles.saveButton}
+            onPress={() =>
+              navigation.navigate("Complete Setup", {
+                firstName,
+                lastName,
+              })
+            }
           >
             <Text style={{ color: "#fff" }}>Save And Continue</Text>
           </PrimaryButton>
@@ -73,7 +81,18 @@ export default AccountSetup;
 
 const styles = StyleSheet.create({
   container: {
-    paddingTop: 20
+    // paddingTop: 20
+  },
+  statusBarContainer: {
+    width: "100%",
+    backgroundColor: "#dceafc",
+    height: 8,
+    marginBottom: 36,
+  },
+  statusBar: {
+    width: "1%",
+    height: "100%",
+    backgroundColor: COLORS.primaryColor,
   },
   pageHeader: {
     alignItems: "center",

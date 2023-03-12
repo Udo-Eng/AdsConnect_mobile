@@ -1,7 +1,8 @@
-import { TextInput, View, Text, StyleSheet, Pressable } from "react-native";
+import { TextInput, View, Text, StyleSheet, Pressable ,Image} from "react-native";
 import {useState}  from "react";
 import { AntDesign } from '@expo/vector-icons';
-import { COLORS } from "../../constants/colors";
+import { Ionicons } from '@expo/vector-icons'; 
+import { COLORS } from "../../constants";
 
 
 
@@ -29,7 +30,7 @@ const PasswordInput = ({
     
     // function to display the eye 
     function displayEyeOff(){
-        return <Pressable onPress={toggleDisplayPasswordandler}><Image source={require("../../assets/images/Vector.png")} /></Pressable>
+        return <Pressable onPress={toggleDisplayPasswordandler}><Ionicons name="eye-off" size={24} color="#074698" /></Pressable>
     }
 
 
@@ -56,8 +57,8 @@ const PasswordInput = ({
 let inputConfig =   {
     autoCapitalize: "none",
     autoCorrect: false,
-    autoFocus: true,
-    cursorColor: "#00000",
+    secureTextEntry: true,
+    cursorColor: COLORS.cursorColor,
     ...textInputConfig
   }
 
@@ -66,7 +67,7 @@ let inputConfig =   {
       <Text style={inputLabelStyle}>{label}</Text>
       <View style={defaultContainerStyle}>
         <TextInput style={defaultInputStyle} {...inputConfig}  cursorColor="#000000"/>
-        {eyeIcon}
+        {eyeIcon()}
       </View>
     </View>
   );
@@ -75,19 +76,19 @@ let inputConfig =   {
 const styles = StyleSheet.create({
   inputOuterContainer: {
     width: "100%",
-    marginTop: 26,
+    marginTop: 12,
   },
   inputContainer: {
-    borderColor: "gray",
+    borderColor: COLORS.inputBorder,
     marginTop: 6,
     borderWidth: 1,
-    borderRadius: 10,
+    borderRadius: 4,
     padding: 10,
     flexDirection: "row",
   },
   inputLabel: {
     opacity: 0.7,
-    color: "#828282",
+    color: COLORS.inputLabel,
   },
   input: {
     flex: 1,

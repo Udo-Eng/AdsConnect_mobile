@@ -10,19 +10,27 @@ import {
   Platform,
   ScrollView,
 } from "react-native";
+import { COLORS } from "../../constants";
 import PrimaryButton from "../../components/UI/PrimaryButton";
 // import { Dropdown } from "react-native-element-dropdown";
+import { useIsFocused } from "@react-navigation/native";
 
 const AccountSetup2 = ({ navigation }) => {
   const [state, setState] = useState("Yes");
-  const [lastName, setLastName] = useState("");
+  const [school, setSchool] = useState("");
   const [schoolID, setSchoolID] = useState("");
+
+  const isFocused = useIsFocused();
+
   return (
     <KeyboardAvoidingView
       behavior={Platform.OS === "ios" ? "padding" : "height"}
       style={{ flex: 1 }}
     >
       <ScrollView style={styles.container}>
+        <View style={styles.statusBarContainer}>
+          <View style={styles.statusBar}></View>
+        </View>
         <View style={styles.pageHeader}>
           <Text style={styles.title}>All you need is a digital push</Text>
           <Image source={require("../../assets/images/amico.png")} />
@@ -42,8 +50,8 @@ const AccountSetup2 = ({ navigation }) => {
             <Text style={styles.formLabel}>School</Text>
             <TextInput
               style={styles.formInput}
-              value={lastName}
-              onChangeText={setLastName}
+              value={school}
+              onChangeText={setSchool}
             />
           </View>
           <View>
@@ -52,12 +60,12 @@ const AccountSetup2 = ({ navigation }) => {
               style={styles.formInput}
               value={schoolID}
               onChangeText={setSchoolID}
-              keyboardType={"number-pad"}
+              keyboardType="alpha-numeric"
             />
           </View>
           <PrimaryButton
-            style={styles.saveButton}
-            onPress={() => navigation.navigate("Final Setup")}
+            btnStyle={styles.saveButton}
+            onPress={() => navigation.navigate("Front Image")}
           >
             <Text style={{ color: "#fff" }}>Save And Continue</Text>
           </PrimaryButton>
@@ -74,7 +82,18 @@ export default AccountSetup2;
 
 const styles = StyleSheet.create({
   container: {
-    paddingTop: 20,
+    // paddingTop: 20,
+  },
+  statusBarContainer: {
+    width: "100%",
+    backgroundColor: "#dceafc",
+    height: 8,
+    marginBottom: 36,
+  },
+  statusBar: {
+    width: "25%",
+    height: "100%",
+    backgroundColor: COLORS.primaryColor,
   },
   pageHeader: {
     alignItems: "center",
