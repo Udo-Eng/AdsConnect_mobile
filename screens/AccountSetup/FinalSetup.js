@@ -67,7 +67,7 @@ const FinalSetup = ({ navigation }) => {
                       return (
                           <View key={key}>
                               {checked === key ?
-                                <TouchableOpacity style={styles.btn} source={require("../../assets/images/adaptive-icon.png")}>
+                                <TouchableOpacity style={styles.btn}>
                                     <Image style={styles.img} />
                                     <Text>{data}</Text>
                                 </TouchableOpacity>  :

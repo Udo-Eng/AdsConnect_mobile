@@ -15,15 +15,14 @@ export default function App() {
     <PaperProvider>
       <NavigationContainer>
         {/* <View style={styles.container}> */}
-          <Stack.Navigator>
-            <Stack.Screen name='Terms of Use' component={TermOfUse} />
-            {/* <Stack.Screen name='Sign Up' component={SignUp} /> */}
-            <Stack.Screen name='Account Setup' component={AccountSetup} />
-            <Stack.Screen name='Complete Setup' component={AccountSetup2} />
-            <Stack.Screen name='Final Setup' component={FinalSetup} />
-          </Stack.Navigator>
+        <Stack.Navigator>
+          <Stack.Screen name="Terms of Use" component={TermOfUse} />
+          {/* <Stack.Screen name='Sign Up' component={SignUp} /> */}
+          <Stack.Screen name="Account Setup" component={AccountSetup} />
+          <Stack.Screen name="Complete Setup" component={AccountSetup2} />
+          <Stack.Screen name="Final Setup" component={FinalSetup} />
+        </Stack.Navigator>
         {/* </View> */}
-
       </NavigationContainer>
     </PaperProvider>
   );
